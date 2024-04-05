@@ -7,7 +7,7 @@
 # of the rectangle, and the circumference of the circle.
 from math import pi
 class Rectangle:
-    """Models calculations of a rectangle"""  #models length and width of rectangle?#
+    """Models length and width of a rectangle"""
     def __init__(self, length, width):
         self.length = length
         self.width = width
@@ -19,10 +19,16 @@ class Rectangle:
     def perimeter(self):
         """calculates perimeter of the rectangle"""
         return (self.length * 2) + (self.width * 2)
+    
+    def __str__(self):
+        return f"(length:{self.length}, width:{self.width})"
+    
+    def __repr__(self):
+        return f"Rectangle(length={self.length}, width={self.width})"
 
 
 class Circle:
-    """Models calculations of a circle"""  # models radius of circle?#
+    """Models radius of a circle"""
     def __init__(self, radius) -> None:
         self.radius = radius
 
@@ -33,6 +39,12 @@ class Circle:
     def circumference(self):
         """calculates circumference of the circle"""
         return 2 * pi * self.radius
+    
+    def __str__(self):
+        return f"radius:{self.radius}"
+    
+    def __repr__(self):
+        return f"Circle(radius={self.radius})"
 
 
 r = Rectangle(3, 5)
