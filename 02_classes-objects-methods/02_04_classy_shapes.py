@@ -5,3 +5,39 @@
 # Write methods in the appropriate class so that you can calculate
 # the area of both the rectangle and the circle, the perimeter
 # of the rectangle, and the circumference of the circle.
+from math import pi
+class Rectangle:
+    """Models calculations of a rectangle"""  #models length and width of rectangle?#
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+    
+    def area(self):
+        """calculates area of the rectangle"""
+        return self.length * self.width
+
+    def perimeter(self):
+        """calculates perimeter of the rectangle"""
+        return (self.length * 2) + (self.width * 2)
+
+
+class Circle:
+    """Models calculations of a circle"""  # models radius of circle?#
+    def __init__(self, radius) -> None:
+        self.radius = radius
+
+    def area(self):
+        """calculates area of the circle"""
+        return (self.radius **2) * pi
+
+    def circumference(self):
+        """calculates circumference of the circle"""
+        return 2 * pi * self.radius
+
+
+r = Rectangle(3, 5)
+print(r.area())
+print(r.perimeter())
+c = Circle(5)
+print(c.area())
+print(c.circumference())
