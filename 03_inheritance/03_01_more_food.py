@@ -25,3 +25,15 @@ class Spice(Ingredient):
     def grind(self):
         print(f"You have now {self.amount} of ground {self.name}.")
 
+    def expire(self):
+        if self.name == "salt":
+            print(f"salt never expires! ask the sea!")
+        else:
+            print(f"your {self.name} has expired.  It's probably still good.")
+        self.name = "old " + self.name
+
+class Vegtable(Ingredient):
+    """Models a vegtable"""
+    def peel(self):
+        print(f"You now have {self.amount} of peeled {self.name}.")
+        self.name = "peeled " + {self.name}
