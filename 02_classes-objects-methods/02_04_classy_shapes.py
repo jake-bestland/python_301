@@ -29,7 +29,7 @@ class Rectangle:
 
 class Circle:
     """Models radius of a circle"""
-    def __init__(self, radius) -> None:
+    def __init__(self, radius):
         self.radius = radius
 
     def area(self):
