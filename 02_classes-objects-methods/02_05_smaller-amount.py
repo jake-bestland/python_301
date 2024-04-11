@@ -24,10 +24,7 @@ class Ingredient:
     def __add__(self, other):
         """Combines two ingredients."""
         new_name = self.name + other.name
-        if self.amount <= other.amount:
-            new_amount = self.amount
-        else:
-            new_amount = other.amount
+        new_amount = min(self.amount, other.amount)
         return Ingredient(name=new_name, amount=new_amount)
     
     def __str__(self):
