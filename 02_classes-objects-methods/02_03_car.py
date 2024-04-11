@@ -18,8 +18,7 @@ class Car:
 
     def turbo(self):
         """adds 5 to max speed"""
-        print(f"The max speed of the {self.model} has increased by 5")
-        self.max_speed = (5 + self.max_speed)
+        self.max_speed += 5
 
     def details(self):
         print(f'current car details: Model: "{self.model}", Year: {self.year}, Max speed: {self.max_speed}')
