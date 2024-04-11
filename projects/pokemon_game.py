@@ -28,14 +28,13 @@ class Pokemon:
     
     def feed(self, amount):
         self.amount = amount
-        if (self.hp + self.amount) <= self.max_hp:
+        if (self.hp + self.amount) < self.max_hp:
             self.hp += self.amount
             print(f"You fed {self.name}.  {self.name} now has {self.hp}/{self.max_hp} HP")
-        elif self.hp < self.max_hp and (self.hp + self.amount) >= self.max_hp:
+        else:
             self.hp = self.max_hp
             print(f"You have fed {self.name}.  {self.name} if now full and at {self.max_hp} HP.")
-        else:
-            print(f"{self.name} if full and at {self.max_hp} HP.")
+
     
     def battle(self, other):
         print("Battle:", self.name, "vs", other.name)
