@@ -55,7 +55,8 @@ class Deck:
     def pop_card(self, i=-1):
         """removes and returns a card from a deck.  
         
-        i: index of the card to pop; defaults to the last card in the deck"""
+        i: index of the card to pop; defaults to the last card in the deck
+        """
         return self.cards.pop(i)
     
     def add_card(self, card):
@@ -82,7 +83,7 @@ class Deck:
         num: integer number of cards to move
         """
         for i in range(num):
-            hand.add_card(self.pop_card(0))
+            hand.add_card(self.pop_card[0])
     
 class Hand(Deck):
     """Represents a hand of playing cards"""
