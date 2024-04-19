@@ -11,9 +11,12 @@ import json
 import requests
 from pprint import pprint
 
-BASE_URL = "https://ghibliapi.herokuapp.com/"
+BASE_URL = "https://ghibliapi-iansedano.vercel.app"
 page = requests.get('https://ghibliapi-iansedano.vercel.app/api/species')
+# data = page.json()
 
+# with open("species.json", "w") as fout:
+#     json.dump(data, fout)
 
 with open("species.json", "r") as fin:
     data = json.load(fin)
