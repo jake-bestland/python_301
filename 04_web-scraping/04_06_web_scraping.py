@@ -14,6 +14,18 @@ URL = "https://www.instructables.com/How-to-Play-Phase-10/"
 page = requests.get(URL)
 soup = BeautifulSoup(page.text)
 
-article = soup.article
-for section in article.find_all("section", class_="step"):
-    pprint(section.text)
+# article = soup.article
+# rules = ""
+# for section in article.find_all("section", class_="step"):
+#     rules += f"\n{section.text}\n"
+
+# print(rules)
+
+# with open("phase_10_rules.txt", "w") as p10_rules:
+#     p10_rules.write(rules)
+
+
+with open("phase_10_rules.txt", "r") as p10_rules:
+    rules = p10_rules.read()
+
+print(rules)
