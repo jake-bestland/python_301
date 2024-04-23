@@ -80,7 +80,7 @@ class Deck:
         num: integer number of cards to move
         """
         for i in range(num):
-            hand.add_card(self.pop_card[0])
+            hand.add_card(self.pop_card(0))
     
 class Hand(Deck):
     """Represents a hand of playing cards"""
@@ -92,35 +92,35 @@ class Hand(Deck):
 deck = Deck()
 deck.shuffle()
 
-player1 = Hand('Player 1')
-player2 = Hand('Player 2')
+player1 = Hand(input("Enter player #1's name: "))
+player2 = Hand(input("Enter player #2's name: "))
 deck.move_cards(player1, 26)
 deck.move_cards(player2, 26)
 
 while True:
     if player1.count_card() == 0:
-        print("Player 2 wins the game!")
+        print(f"{player2.label} wins the game!")
         break
     if player2.count_card() == 0:
-        print("Player 1 wins the game!")
+        print(f"{player1.label} wins the game!")
         break
     inp = input("To continue, press enter. Press 'q' to quit, or 'c' to see how many cards each player has.")
     if inp == "q":
         break
     if inp == "c":
-        print(f"Player 1: {player1.count_card()} cards.\nPlayer 2: {player2.count_card()} cards.")
+        print(f"{player1.label}: {player1.count_card()} cards.\n{player2.label}: {player2.count_card()} cards.")
         continue
     p1_card = player1.pop_card(0)
     p2_card = player2.pop_card(0)
-    print(f"Player 1 draws: {p1_card}")
-    print(f"Player 2 draws: {p2_card}")
+    print(f"{player1.label} draws: {p1_card}")
+    print(f"{player2.label} draws: {p2_card}")
     if p1_card > p2_card:
-        print(f"Player 1 wins the hand and adds {p1_card} and {p2_card} to their hand.")
+        print(f"{player1.label} wins the hand and adds {p1_card} and {p2_card} to their hand.")
         player1.add_card(p1_card)
         player1.add_card(p2_card)
         continue
     elif p1_card < p2_card:
-        print(f"Player 2 wins the hand and adds {p2_card} and {p1_card} to their hand.")
+        print(f"{player2.label} wins the hand and adds {p2_card} and {p1_card} to their hand.")
         player2.add_card(p2_card)
         player2.add_card(p1_card)
         continue
@@ -139,11 +139,11 @@ while True:
         while tie == True:
             player1.move_cards(p1_w_hand, num)
             player2.move_cards(p2_w_hand, num)
-            print(f"{player1.label} and {player2.label} each lay 2 cards face down. P1={p1_w_hand}.\n P2={p2_w_hand}")
+            print(f"{player1.label} and {player2.label} each lay 2 idle cards down.\n{player1.label}'s hand:\n{p1_w_hand}.\n{player2.label}'s hand:\n{p2_w_hand}")
             p1_w_card = p1_w_hand.pop_card()
             p2_w_card = p2_w_hand.pop_card()
-            print(f"Player 1 draws: {p1_w_card}")
-            print(f"Player 2 draws: {p2_w_card}")
+            print(f"{player1.label} draws: {p1_w_card}")
+            print(f"{player2.label} draws: {p2_w_card}")
             if p1_w_card > p2_w_card:
                 print(f"{player1.label} wins!")
                 player1.add_card(p1_w_card)
