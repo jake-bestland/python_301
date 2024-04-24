@@ -12,15 +12,26 @@ war_peace_path = Path("//Users/jakebestland/Documents/codingnomads/python-301-ma
 pride_prej_path = Path("/Users/jakebestland/Documents/codingnomads/python-301-main/05_exceptions/books/pride_and_prejudice.txt")
 crime_pun_path = Path("/Users/jakebestland/Documents/codingnomads/python-301-main/05_exceptions/books/crime_and_punishment.txt")
 
+try:
+        with war_peace_path.open() as war_file:
+                wp = war_file.read()
+except IOError:
+       print("Unable to read in this file. It may be an invalid filename or location.")
+       
+try:
+        with crime_pun_path.open() as crime_file:
+                cp = crime_file.read()
+except IOError:
+       print("Unable to read in this file. It may be an invalid filename or location.")
 
-with war_peace_path.open() as war_file:
-        wp = war_file.read()
+       
+try:
+        with pride_prej_path.open() as pride_file:
+                pp = pride_file.read()
+except IOError:
+       print("Unable to read in this file. It may be an invalid filename or location.")
 
-with crime_pun_path.open() as crime_file:
-        cp = crime_file.read()
-
-with pride_prej_path.open() as pride_file:
-        pp = pride_file.read()
+       
 
 try:  
     if "Prince" in wp[0:100]:

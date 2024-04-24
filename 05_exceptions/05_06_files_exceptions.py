@@ -22,19 +22,27 @@ pride_prej_path = Path("/Users/jakebestland/Documents/codingnomads/python-301-ma
 crime_pun_path = Path("/Users/jakebestland/Documents/codingnomads/python-301-main/05_exceptions/books/crime_and_punishment.txt")
 
 file_list = []
-with war_peace_path.open() as war_file:
-        wp = war_file.read()
-        file_list.append(wp)
+try:
+        with war_peace_path.open() as war_file:
+                wp = war_file.read()
+                file_list.append(wp)
+except IOError:
+       print("Unable to read in this file. It may be an invalid filename or location.")
 
-with crime_pun_path.open() as crime_file:
-        cp = crime_file.read()
-        cp = ""
-        file_list.append(cp)
+try:
+        with crime_pun_path.open() as crime_file:
+                cp = crime_file.read()
+                cp = ""
+                file_list.append(cp)
+except IOError:
+       print("Unable to read in this file. It may be an invalid filename or location.")
 
-with pride_prej_path.open() as pride_file:
-        pp = pride_file.read()
-        file_list.append(pp)
-
+try:
+        with pride_prej_path.open() as pride_file:
+                pp = pride_file.read()
+                file_list.append(pp)
+except IOError:
+       print("Unable to read in this file. It may be an invalid filename or location.")
 
 try:
     for file in file_list:
