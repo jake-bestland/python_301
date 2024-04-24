@@ -26,9 +26,9 @@ for link in main_links:
     if 'href' in link.attrs.keys():
         if '#' not in link.attrs['href']:
             non_nav_link.append(link["href"])
-# pprint(non_nav_link[0])
+# pprint(non_nav_link)
 
-# non_nav_link[0]
+
 wiki2url = BASE_URL + non_nav_link[0]
 
 wiki2 = requests.get(wiki2url)
