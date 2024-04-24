@@ -34,6 +34,7 @@ for r_link in link_url:
             check_list.append(i)
     if check_list == ingredients:
         recipes.append(r_link)
+        check_list.clear()
     else:
         check_list.clear()
 
