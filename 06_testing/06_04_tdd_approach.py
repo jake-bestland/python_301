@@ -9,3 +9,16 @@
 #
 # You do not need to implement the actual functions after writing the tests 
 # but of course you can do that, too.
+
+import unittest
+import example  ## file doesn't exist, just for demonstration
+
+
+class TestExample(unittest.TestCase):
+    ## add test for an addition function
+    def test_addition(self):
+        self.assertEqual(example.addition(5, 4), 9)
+    
+    ## add test for a multiplication function
+    def test_multiply(self):
+        self.assertEqual(example.multiply(5, 4), 20)
