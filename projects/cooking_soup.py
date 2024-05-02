@@ -48,7 +48,6 @@ class Vegtable(Ingredient):
 class Soup:
     def __init__(self, ingredient_list):
         self.ingredient_list = ingredient_list
-        self.num_ingredients = len(ingredient_list)
 
     def __str__(self):
         return f"This soup is made up of {self.ingredient_list}"
