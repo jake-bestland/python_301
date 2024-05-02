@@ -61,13 +61,13 @@ if __name__ == "__main__":
 
     wiki2url = BASE_URL + non_nav_link[0]
 
-    wiki2 = requests.get(wiki2url)
-    w2soup = BeautifulSoup(wiki2.text)
+    wiki2 = get_html_content(wiki2url)
+    w2soup = make_soup(wiki2)
 
-    w2_body = w2soup.find("div", class_="mw-body-content")
+    w2_body = get_main_body(w2soup)
 
     # with open("wiki_article.txt", "w") as wiki_article:
-    #     wiki_article.write(w2_body.text)
+    #     wiki_article.write(w2_body)
 
 
     with open("wiki_article.txt", "r") as wiki_article:
