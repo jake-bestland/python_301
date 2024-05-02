@@ -14,10 +14,11 @@ import unittest
 import example  ## file doesn't exist, just for demonstration
 
 
+##create test class for the file being imported
 class TestExample(unittest.TestCase):
-    ## add test for an addition function
-    def test_addition(self):
-        self.assertEqual(example.addition(5, 4), 9)
+    ## add test for a division function
+    def test_divide(self):
+        self.assertEqual(example.divide(10, 5), 2)
     
     ## add test for a multiplication function
     def test_multiply(self):
