@@ -8,6 +8,8 @@ def censor_the_words(*args):
             bad_words = {}
             for arg in args:
                 bad_words[arg] = arg[0] + ("*" * (len(arg) -1))
+                cap_arg = arg.capitalize()
+                bad_words[cap_arg] = cap_arg[0] + ("*" * (len(cap_arg) -1))
             sentence = ""
             word = ""
             for char in str(func(text)):
@@ -25,7 +27,7 @@ def censor_the_words(*args):
         return censored_words
     return censor
 
-@censor_the_words("Shoot", "crab")
+@censor_the_words("shoot", "crab")
 def repeat(text):
     return text
 
