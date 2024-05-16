@@ -4,9 +4,7 @@
 
 def add_quotes(func):
     def quote(text):
-        initial_result = func(text)
-        new_result = f'"{initial_result}"'
-        return new_result
+        return f'"{func(text)}"'
     return quote
 
 @add_quotes
