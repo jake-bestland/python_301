@@ -19,7 +19,7 @@ def censor(func):
                 word += char
                 continue
             elif len(word) != 0:
-                sentence += word + char + ""
+                sentence += word + char
                 word = ""
             else:
                 sentence += char
